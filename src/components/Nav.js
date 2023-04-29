@@ -201,17 +201,13 @@ const Nav = () => {
             </NavLink>
           </li>
 
-          {isAuthenticated ? (
+          
 
 <li>
 <Button onClick={() => loginWithRedirect()}>Log In</Button>
-</li>) :
+</li>
 
-(<li>
-<Button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-      Log Out
-    </Button>
-</li>)}
+
 
 
 
