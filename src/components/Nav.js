@@ -162,6 +162,20 @@ const Nav = () => {
         padding: 0.8rem 1.4rem;
       }
     }
+
+    .shopcam-button {
+      font-size: 1.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: ${({ theme }) => theme.colors.black};
+      text-decoration: none;
+      transition: color 0.3s linear;
+
+      &:hover,
+      &:active {
+        color: ${({ theme }) => theme.colors.helper};
+      }
+    }
   `;
 
   return (
@@ -169,58 +183,44 @@ const Nav = () => {
       <div className={menuIcon ? "navbar active" : "navbar"}>
         <ul className="navbar-lists">
           <li>
-            <NavLink
-              to="/"
-              className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
+            <NavLink to="/" className="navbar-link " onClick={() => setMenuIcon(false)}>
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/about"
-              className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
+            <NavLink to="/about" className="navbar-link " onClick={() => setMenuIcon(false)}>
               About
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/products"
-              className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
+            <NavLink to="/products" className="navbar-link " onClick={() => setMenuIcon(false)}>
               Products
             </NavLink>
           </li>
           <li>
-            <NavLink
-              to="/contact"
-              className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
+            <NavLink to="/contact" className="navbar-link " onClick={() => setMenuIcon(false)}>
               Contact
             </NavLink>
           </li>
 
-          
-
-<li>
-<Button onClick={() => loginWithRedirect()}>Log In</Button>
-</li>
-
-
-
-
-
-
+          <li>
+            <Button onClick={() => loginWithRedirect()}>Log In</Button>
+          </li>
           <li>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />
               <span className="cart-total--item"> 10 </span>
             </NavLink>
           </li>
+          {/* Add the "Shopcam" button */}
+          <li>
+            <NavLink to="/shopcam" className="shopcam-button">
+              Shopcam
+            </NavLink>
+          </li>
         </ul>
 
-        {/* two button for open and close of menu */}
+        {/* Two buttons for open and close of the menu */}
         <div className="mobile-navbar-btn">
           <CgMenu
             name="menu-outline"
